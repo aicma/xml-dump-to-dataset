@@ -1,11 +1,11 @@
 <?php
-$xsl = "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\">
-    <xsl:template match=\"/\">
+$xsl = "<xsl:stylesheet version='1.0' xmlns:xsl='http://www.w3.org/1999/XSL/Transform'>
+    <xsl:template match='/'>
     <dataset><xsl:text>&#xa;</xsl:text>
-        <xsl:for-each select=\"pma_xml_export/database/table\">
+        <xsl:for-each select='pma_xml_export/database/table'>
         
-        <xsl:variable name=\"e\" select=\"@name\"/>
-        <xsl:element name=\"{\$e}\"><xsl:text>&#xa;</xsl:text>
+        <xsl:variable name='e' select='@name'/>
+        <xsl:element name='{\$e}'><xsl:text>&#xa;</xsl:text>
             <xsl:for-each select='column'>
                 <xsl:variable name='c' select='@name'/>
                 <xsl:element name='{\$c}'>
